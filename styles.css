@@ -1,10 +1,12 @@
 /* Estilos generales del body */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aquamarine;
+    background-image:url(img/The_SpongeBob_Movie_Sponge_on_the_Run_004.webp)  ;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
 }
@@ -15,12 +17,25 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #fafafa;
+    background-color: rgba(250, 250, 250, 0.8); /* Fondo blanco con 80% de opacidad */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(248, 3, 3, 0.1);
-    border: 2px solid #ddd; /* Borde de la tarjeta */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Luz inicial */
+    border: 2px solid #dddddd; /* Borde de la tarjeta */
+    animation: blinkingLight 1s infinite; /* Animación infinita */
+}
 
+/* Animación de parpadeo */
+@keyframes blinkingLight {
+    0% {
+        box-shadow: 0 0 10px rgb(0, 204, 255);
+    }
+    50% {
+        box-shadow: 0 0 30px rgb(0, 181, 226);
+    }
+    100% {
+        box-shadow: 0 0 10px rgb(0, 122, 153);
+    }
 }
 
 /* Imagen de perfil */
@@ -37,12 +52,15 @@ body {
 
 /* Título */
 .title {
-    background-color: black;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con 50% de opacidad */
+    color: rgb(0, 0, 0); /* Color del texto */
+    border: none;
     padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+    
 }
 
 /* Profesión */
@@ -59,19 +77,28 @@ body {
     font-size: 16px;
     margin-top: 5px;
 }
+@keyframes blinkingLightsinanimation {
+    
+    100% {
+        box-shadow: 0 0 10px rgb(0, 122, 153);
+    }
+}
 
 /* Botón de contacto */
 .contact-btn {
-    background-color: black;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con 50% de opacidad */
+    color: rgb(0, 0, 0); /* Color del texto */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
     transition: 0.3s;
+    animation: blinkingLightsinanimation 0,1 infinite; /* Animación infinita */
 }
 
 .contact-btn:hover {
-    background-color: darkgray;
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo blanco con 30% de opacidad al pasar el mouse */
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
 }
